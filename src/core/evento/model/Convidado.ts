@@ -2,8 +2,7 @@ export default interface Convidado {
   id: string;
   nome: string;
   email: string;
-  telefone: string;
   confirmado: boolean;
-  possuiAcompanhante: boolean;
+  possuiAcompanhantes: boolean;
   qtdeAcompanhantes: number;
 }
