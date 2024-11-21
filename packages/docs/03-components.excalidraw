@@ -75,12 +75,12 @@
       "containerId": "aqt1RgV2YpSh1k8be342a",
       "originalText": "estado\n\nfunções\n\n<JSX>",
       "lineHeight": 1.25,
-      "baseline": 121
+      "baseline": 119
     },
     {
       "type": "text",
-      "version": 171,
-      "versionNonce": 1172771239,
+      "version": 172,
+      "versionNonce": 1232719032,
       "isDeleted": false,
       "id": "0l2coATgFj2NZII1AGHv4",
       "fillStyle": "solid",
@@ -100,7 +100,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1731439753998,
+      "updated": 1732149183489,
       "link": null,
       "locked": false,
       "fontSize": 34.044534708625456,
@@ -111,7 +111,7 @@
       "containerId": null,
       "originalText": "Componente",
       "lineHeight": 1.25,
-      "baseline": 30
+      "baseline": 29
     },
     {
       "type": "rectangle",
@@ -185,12 +185,12 @@
       "containerId": "75RX88uEbw0nNigiOk94q",
       "originalText": "<JSX>",
       "lineHeight": 1.25,
-      "baseline": 21
+      "baseline": 19
     },
     {
       "type": "text",
-      "version": 280,
-      "versionNonce": 1024032841,
+      "version": 281,
+      "versionNonce": 2103474888,
       "isDeleted": false,
       "id": "PvcDjcuDqlDzDlLcG5lCD",
       "fillStyle": "solid",
@@ -210,7 +210,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1731439753998,
+      "updated": 1732149183489,
       "link": null,
       "locked": false,
       "fontSize": 34.044534708625456,
@@ -221,7 +221,7 @@
       "containerId": null,
       "originalText": "Componente",
       "lineHeight": 1.25,
-      "baseline": 30
+      "baseline": 29
     },
     {
       "type": "rectangle",
@@ -295,12 +295,12 @@
       "containerId": "kYFbua0Yu5vCNow3_o29C",
       "originalText": "estado\n\nfunções",
       "lineHeight": 1.25,
-      "baseline": 71
+      "baseline": 69
     },
     {
       "type": "text",
-      "version": 392,
-      "versionNonce": 310658247,
+      "version": 393,
+      "versionNonce": 1661957560,
       "isDeleted": false,
       "id": "ZJmTAd1VOl71F6X-cirAn",
       "fillStyle": "solid",
@@ -320,7 +320,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1731439753998,
+      "updated": 1732149183489,
       "link": null,
       "locked": false,
       "fontSize": 34.044534708625456,
@@ -331,7 +331,7 @@
       "containerId": null,
       "originalText": "Hook",
       "lineHeight": 1.25,
-      "baseline": 30
+      "baseline": 29
     },
     {
       "type": "arrow",
