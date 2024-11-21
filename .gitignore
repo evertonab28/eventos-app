@@ -1,20 +1,10 @@
-# Dependências do Node.js
 node_modules/
-
-# Arquivos de log
 *.log
-
-# Arquivos de sistema
 .DS_Store
 Thumbs.db
-
-# Diretórios do editor de código
 .vscode/
 .idea/
-
-# Arquivos de configuração do OS
 .env
-
-# Compilação de TypeScript
 dist/
+.next
 

@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
   "scripts": {
-    "dev": "run-p dev:*",
-    "dev:frontend": "cd apps/frontend && npm run dev",
-    "dev:backend": "cd apps/backend && npm run dev"
+    "dev": "run-p packages:* apps:*",
+    "apps:frontend": "cd apps/frontend && npm run dev",
+    "apps:backend": "cd apps/backend && npm run dev",
+    "packages:core": "cd packages/core && npm run dev"
   },
   "keywords": [],
   "author": "",

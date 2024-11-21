@@ -1,7 +1,8 @@
 {
   "name": "core",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsup src/index.ts --dts --watch",
     "build": "tsup src/index.ts --dts --minify"
