@@ -81,6 +81,7 @@ export class EventosController {
   }
 
   private deserializar(evento: any) {
+    if (!evento) return null;
     return {
       ...evento,
       data: Data.desformatar(evento.data),
