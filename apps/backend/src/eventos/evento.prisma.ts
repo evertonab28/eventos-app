@@ -1,12 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { Convidado, Evento } from 'core';
+import { create } from 'domain';
 import { PrismaProvider } from 'src/db/prisma.provider';
 
 @Injectable()
 export class EventoPrisma {
   constructor(readonly prisma: PrismaProvider) {}
   salvar(evento: Evento) {
-    return this.prisma.evento.create({ data: evento as any });
+    return this.prisma.evento.create({
+      data: {
+        ...(evento as any),
+        convidados: {
+          create: evento.convidados,
+        },
+      },
+    });
   }
 
   salvarConvidado(evento: Evento, convidado: Convidado) {
@@ -38,17 +46,17 @@ export class EventoPrisma {
   async buscarPorAlias(
     alias: string,
     completo: boolean = false,
-  ): Promise<Evento> | null {
+  ): Promise<Evento | null> {
     return this.prisma.evento.findUnique({
       select: {
         id: true,
-        alias: true,
         nome: true,
         descricao: true,
         data: true,
         local: true,
         imagem: true,
         imagemBackground: true,
+        alias: true,
         senha: completo,
         publicoEsperado: completo,
         convidados: completo,

@@ -6,7 +6,7 @@ GET http://localhost:4000/eventos
 
 ###
 
-GET http://localhost:4000/eventos/evento-js-avancado
+GET http://localhost:4000/eventos/reuniao-familia-oliveira
 
 ###
 
@@ -14,27 +14,27 @@ GET http://localhost:4000/eventos/5e25282b-cde5-45ff-9436-c4320d7c2f6f
 
 ###
 
-GET http://localhost:4000/eventos/validar/aniversario-joao/5e25282b-cde5-45ff-9436-c4320d7c2f6f
+GET http://localhost:4000/eventos/validar/evento-fullstack/5e25282b-cde5-45ff-9436-c4320d7c2f6f
 
 ###
 
-POST http://localhost:4000/eventos/acessar/ 
+POST http://localhost:4000/eventos/acessar 
 Content-Type: application/json
 
 {
-    "id": "f4b18eb7-13c6-4bde-aa26-a9551a5c31f2",
-    "senha": "js2024"
+    "id": "21ff36d7-8fa7-495e-9339-d1687458b660",
+    "senha": "senha123"
 }
 
 ###
 
-POST http://localhost:4000/eventos/evento-fullstack/convidado 
+POST http://localhost:4000/eventos/reuniao-familia-oliveira/convidado 
 Content-Type: application/json
 
 {
-    "id": "e004d985-02d0-4dd2-9482-6b73269ecd69",
-    "nome": "Everton Bezerra",
-    "email": "tom@gmail.com",
+    "id": "f7f5279c-e271-49e8-b1b2-b2d413f3044e",
+    "nome": "Leonardo Leitão",
+    "email": "leonardo@formacao.dev",
     "confirmado": true,
     "possuiAcompanhantes": true,
     "qtdeAcompanhantes": 10
@@ -46,19 +46,19 @@ POST http://localhost:4000/eventos
 Content-Type: application/json
 
 {
-    "alias": "evento-dev",
-    "nome": "Evento Semana DEV",
-    "data": "2025-04-02T08:00",
-    "local": "Naviraí",
+    "alias": "evento-dev2",
+    "nome": "Evento Dev2",
+    "data": "2025-12-31T23:00",
+    "local": "São Paulo",
     "descricao": "Evento de tecnologia",
-    "senha": "dev2025",
-    "imagem": "https://techcrunch.com/wp-content/uploads/2015/04/codecode.jpg",
-    "imagemBackground": "https://techcrunch.com/wp-content/uploads/2015/04/codecode.jpg",
-    "publicoEsperado": 100,
+    "senha": "frameworks2025",
+    "imagem": "https://www.formacao.dev/assets/img/formacao-dev.png",
+    "imagemBackground": "https://www.formacao.dev/assets/img/formacao-dev-background.png",
+    "publicoEsperado": 1000,
     "convidados": [
         {
-            "nome": "Everton Bezerra",
-            "email": "tom@gmail.com",
+            "nome": "Joaquim da Silva",
+            "email": "leonardo@formacao.dev",
             "confirmado": true,
             "possuiAcompanhantes": true,
             "qtdeAcompanhantes": 10
