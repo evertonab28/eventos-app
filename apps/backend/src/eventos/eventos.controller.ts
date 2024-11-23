@@ -1,5 +1,12 @@
 import { EventoPrisma } from './evento.prisma';
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  Param,
+  Post,
+} from '@nestjs/common';
 import {
   complementarConvidado,
   complementarEvento,
@@ -17,7 +24,7 @@ export class EventosController {
   async salvarEvento(@Body() evento: Evento) {
     const eventoCadastrado = await this.repo.buscarPorAlias(evento.alias);
     if (eventoCadastrado && eventoCadastrado.id !== evento.id) {
-      throw new Error('Já existe um evento com esse alias');
+      throw new HttpException('Já existe um evento com esse alias', 400);
     }
 
     const eventoCompleto = complementarEvento(this.deserializar(evento));
@@ -31,7 +38,7 @@ export class EventosController {
   ) {
     const evento = await this.repo.buscarPorAlias(alias);
     if (!evento) {
-      throw new Error('Evento não encontrado');
+      throw new HttpException('Evento não encontrado', 400);
     }
 
     const convidadoCompleto = complementarConvidado(convidado);
@@ -43,11 +50,11 @@ export class EventosController {
     const evento = await this.repo.buscarPorId(dados.id);
 
     if (!evento) {
-      throw new Error('Evento não encontrado');
+      throw new HttpException('Evento não encontrado', 400);
     }
 
     if (evento.senha !== dados.senha) {
-      throw new Error('Senha não corresponde ao evento');
+      throw new HttpException('Senha não corresponde ao evento', 400);
     }
 
     return this.serializar(evento);
