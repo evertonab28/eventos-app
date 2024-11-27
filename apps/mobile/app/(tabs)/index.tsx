@@ -1,6 +1,7 @@
 import Logo from '@/components/template/Logo';
-import { flex1, bgBlack, centerGrow } from '@/style';
-import { ImageBackground, SafeAreaView, Text, View } from 'react-native';
+import { bgBlack, centerGrow } from '@/style';
+import { ImageBackground } from 'react-native';
+import 'react-native-get-random-values';
 
 export default function Index() {
   return (

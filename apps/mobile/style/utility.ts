@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
-import { colors } from "./colors";
+import { StyleSheet } from 'react-native';
+import { colors } from './colors';
 
 const style = StyleSheet.create({
-  alignCenter: { alignItems: "center" },
+  alignCenter: { alignItems: 'center' },
   bgBlack: { backgroundColor: colors.black },
   bgBlue500: { backgroundColor: colors.blue[500] },
   bgBlue600: { backgroundColor: colors.blue[600] },
@@ -13,18 +13,18 @@ const style = StyleSheet.create({
   border: { borderWidth: 1 },
   borderZinc800: { borderColor: colors.zinc[800] },
   flex1: { flex: 1 },
-  flexRow: { flexDirection: "row" },
-  fontBlack: { fontWeight: "900" },
-  fontBold: { fontWeight: "bold" },
+  flexRow: { flexDirection: 'row' },
+  fontBlack: { fontWeight: '900' },
+  fontBold: { fontWeight: 'bold' },
   gapX1: { columnGap: 4 },
   gapX2: { columnGap: 8 },
   gapX4: { columnGap: 16 },
   gapY1: { rowGap: 4 },
   gapY2: { rowGap: 8 },
   gapY4: { rowGap: 16 },
-  itemsCenter: { alignItems: "center" },
-  itemsStretch: { alignItems: "stretch" },
-  justifyCenter: { justifyContent: "center" },
+  itemsCenter: { alignItems: 'center' },
+  itemsStretch: { alignItems: 'stretch' },
+  justifyCenter: { justifyContent: 'center' },
   mt1: { marginTop: 4 },
   mt3: { marginTop: 12 },
   p2: { padding: 8 },
@@ -37,12 +37,12 @@ const style = StyleSheet.create({
   roundedFull: { borderRadius: 9999 },
   roundedLg: { borderRadius: 8 },
   roundedMd: { borderRadius: 4 },
-  selfCenter: { alignSelf: "center" },
-  selfStart: { alignSelf: "flex-start" },
+  selfCenter: { alignSelf: 'center' },
+  selfStart: { alignSelf: 'flex-start' },
   text2Xl: { fontSize: 24 },
   text3Xl: { fontSize: 32 },
   textBlue500: { color: colors.blue[500] },
-  textCenter: { textAlign: "center" },
+  textCenter: { textAlign: 'center' },
   textXs: { fontSize: 12 },
   textSm: { fontSize: 14 },
   textLg: { fontSize: 18 },
@@ -50,9 +50,9 @@ const style = StyleSheet.create({
   textWhite: { color: colors.white },
   textXl: { fontSize: 20 },
   textZinc400: { color: colors.zinc[400] },
-  w4_5: { width: "80%" },
-  w9_10: { width: "90%" },
-  wFull: { width: "100%" },
+  w4_5: { width: '80%' },
+  w9_10: { width: '90%' },
+  wFull: { width: '100%' },
 });
 
 export const alignCenter = style.alignCenter;

@@ -1,13 +1,13 @@
-import { colors } from '@/style/colors';
 import { Tabs } from 'expo-router';
 import { AntDesign } from '@expo/vector-icons';
+import { colors } from '@/style/colors';
 
 export default function TabsLayout() {
   function options(label: string, icone: string): any {
     return {
       headerShown: false,
       tabBarLabel: label,
-      batBarActiveTintColor: colors.blue[500],
+      tabBarActiveTintColor: colors.blue[500],
       tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold' },
       tabBarInactiveTintColor: colors.zinc[400],
       tabBarStyle: {
@@ -27,7 +27,7 @@ export default function TabsLayout() {
 
   return (
     <Tabs>
-      <Tabs.Screen name="index" options={options('Inicio', 'home')} />
+      <Tabs.Screen name="index" options={options('Início', 'home')} />
       <Tabs.Screen name="eventos" options={options('Eventos', 'calendar')} />
     </Tabs>
   );

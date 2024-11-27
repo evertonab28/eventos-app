@@ -1,11 +1,17 @@
-import { bgRed500, centerGrow, textWhite, textXl } from '@/style';
-import { Link } from 'expo-router';
-import { Text, View } from 'react-native';
+import EventoCard from '@/components/evento/EventoCard';
+import useEventos from '@/data/hooks/useEventos';
+import { SafeAreaView, ScrollView, Text } from 'react-native';
 
-export default function Index() {
+export default function Eventos() {
+  const { eventos } = useEventos();
+
   return (
-    <View style={[centerGrow]}>
-      <Text style={[textXl, bgRed500, textWhite]}>Eventos</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        {eventos.map((evento) => (
+          <EventoCard key={evento.id} evento={evento} />
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
