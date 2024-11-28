@@ -14,6 +14,18 @@ export default function RootLayout() {
           }}
         />
         <Stack.Screen
+          name="(stack)/qrcode"
+          options={{
+            headerShown: true,
+            title: 'Leitor de QR Code',
+            headerBackTitle: 'Voltar',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: colors.zinc[900],
+            },
+          }}
+        />
+        <Stack.Screen
           name="(stack)/eventos/[id]"
           options={{
             title: 'Detalhes do evento',

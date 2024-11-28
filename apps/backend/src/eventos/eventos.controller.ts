@@ -47,7 +47,7 @@ export class EventosController {
 
   @Post('acessar')
   async acessarEvento(@Body() dados: { id: string; senha: string }) {
-    const evento = await this.repo.buscarPorId(dados.id);
+    const evento = await this.repo.buscarPorId(dados.id, true);
 
     if (!evento) {
       throw new HttpException('Evento não encontrado', 400);

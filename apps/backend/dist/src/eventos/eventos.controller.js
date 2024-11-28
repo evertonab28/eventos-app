@@ -37,7 +37,7 @@ let EventosController = class EventosController {
         await this.repo.salvarConvidado(evento, convidadoCompleto);
     }
     async acessarEvento(dados) {
-        const evento = await this.repo.buscarPorId(dados.id);
+        const evento = await this.repo.buscarPorId(dados.id, true);
         if (!evento) {
             throw new common_1.HttpException('Evento não encontrado', 400);
         }
