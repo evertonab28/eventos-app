@@ -3,7 +3,7 @@ import { bgBlack, centerGrow } from '@/style';
 import { ImageBackground } from 'react-native';
 import 'react-native-get-random-values';
 
-export default function Index() {
+export default function TelaInicio() {
   return (
     <ImageBackground
       source={require('@/assets/images/background.png')}

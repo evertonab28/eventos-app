@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 import {
   bgBlue600,
   flexRow,
@@ -7,13 +7,13 @@ import {
   px4,
   py2,
   roundedMd,
-} from "./utility";
+} from './utility';
 
 const style = StyleSheet.create({
   centerGrow: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
     columnGap: gapX2.columnGap,
