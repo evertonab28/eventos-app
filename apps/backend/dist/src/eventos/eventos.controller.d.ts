@@ -3,7 +3,19 @@ import { Convidado, Evento } from 'core';
 export declare class EventosController {
     readonly repo: EventoPrisma;
     constructor(repo: EventoPrisma);
-    salvarEvento(evento: Evento): Promise<void>;
+    salvarEvento(evento: Evento): Promise<{
+        data: string;
+        id: string;
+        alias: string;
+        senha: string;
+        nome: string;
+        local: string;
+        descricao: string;
+        imagem: string;
+        imagemBackground: string;
+        publicoEsperado: number;
+        convidados: Convidado[];
+    }>;
     salvarConvidado(alias: string, convidado: Convidado): Promise<void>;
     acessarEvento(dados: {
         id: string;

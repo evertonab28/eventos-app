@@ -27,6 +27,7 @@ let EventosController = class EventosController {
         }
         const eventoCompleto = (0, core_1.complementarEvento)(this.deserializar(evento));
         await this.repo.salvar(eventoCompleto);
+        return this.serializar(eventoCompleto);
     }
     async salvarConvidado(alias, convidado) {
         const evento = await this.repo.buscarPorAlias(alias);

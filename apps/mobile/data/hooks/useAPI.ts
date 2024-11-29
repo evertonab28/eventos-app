@@ -24,11 +24,11 @@ export default function useAPI() {
     return extrairDados(resposta);
   }, []);
 
-  function extrairDados(resposta: Response) {
+  async function extrairDados(resposta: Response) {
     let conteudo: any;
 
     try {
-      conteudo = resposta.json();
+      conteudo = await resposta.json();
     } catch (error) {
       if (!resposta.ok) {
         throw new Error(

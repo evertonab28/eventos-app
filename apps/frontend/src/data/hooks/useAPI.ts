@@ -8,6 +8,7 @@ export default function useAPI() {
     const urlCompleta = `${urlBase}${uri}`;
 
     const resposta = await fetch(urlCompleta);
+    return extrairDados(resposta);
   }, []);
 
   const httpPost = useCallback(async function (caminho: string, body?: any) {
@@ -24,20 +25,20 @@ export default function useAPI() {
     return extrairDados(resposta);
   }, []);
 
-  function extrairDados(resposta: Response) {
+  async function extrairDados(reposta: Response) {
     let conteudo: any;
 
     try {
-      conteudo = resposta.json();
+      conteudo = await reposta.json();
     } catch (error) {
-      if (!resposta.ok) {
+      if (!reposta.ok) {
         throw new Error(
-          `Ocorreu um erro inesperado com status ${resposta.status}`
+          `Ocorreu um erro inesperado com status ${reposta.status}.`
         );
       }
       return null;
     }
-    if (!resposta.ok) throw conteudo;
+    if (!reposta.ok) throw conteudo;
     return conteudo;
   }
 

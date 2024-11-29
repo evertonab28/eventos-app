@@ -54,4 +54,8 @@ body {
   .botao.verde:hover {
     @apply bg-green-600;
   }
+
+  input {
+    color-scheme: dark;
+  }
 }

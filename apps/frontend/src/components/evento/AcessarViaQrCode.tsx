@@ -7,7 +7,7 @@ export interface AcessarViaQrCodeProps {
 
 export default function AcessarViaQrCode(props: AcessarViaQrCodeProps) {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 border border-zinc-800 px-10">
+    <div className="flex flex-col items-center justify-center gap-4 border border-zinc-800 py-5 px-10">
       <span className="text-sm font-light text-zinc-400">
         Acesse via Mobile
       </span>
@@ -16,7 +16,7 @@ export default function AcessarViaQrCode(props: AcessarViaQrCodeProps) {
           id: props.evento.id,
           senha: props.evento.senha,
         })}
-        className='w-32 h-32'
+        className="w-32 h-32"
       />
     </div>
   );
