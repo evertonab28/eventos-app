@@ -44,6 +44,7 @@ export default function PaginaAdminEvento(props: any) {
           presentes={presentes}
           ausentes={ausentes}
           totalGeral={totalGeral}
+          atualizarListaConvidados={obterEvento}
         />
       ) : (
         <FormSenhaEvento

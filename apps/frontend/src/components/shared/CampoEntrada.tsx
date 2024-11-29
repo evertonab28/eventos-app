@@ -7,12 +7,22 @@ export interface CampoEntradaProps extends React.HTMLProps<HTMLInputElement> {
   descricao?: string;
   observacao?: string;
   erro?: string;
-  outterClassname?: string;
+  outterClassName?: string;
 }
 
 export default function CampoEntrada(props: CampoEntradaProps) {
+  function propsInput() {
+    const propsInput = { ...props };
+    delete propsInput.label;
+    delete propsInput.descricao;
+    delete propsInput.observacao;
+    delete propsInput.erro;
+    delete propsInput.outterClassName;
+    return propsInput;
+  }
+
   return (
-    <div className={`flex flex-col gap-2 ${props.outterClassname ?? ''}`}>
+    <div className={`flex flex-col gap-2 ${props.outterClassName ?? ''}`}>
       <div className="flex flex-col">
         {props.label && (
           <label className="text-lg font-black text-white">{props.label}</label>
@@ -25,7 +35,7 @@ export default function CampoEntrada(props: CampoEntradaProps) {
       </div>
 
       <input
-        {...props}
+        {...propsInput()}
         type={props.type ?? 'text'}
         className="w-full px-3 py-2 border border-white/20 focus:border-white/50 rounded-md bg-black/50"
       />

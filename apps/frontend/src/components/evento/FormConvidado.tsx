@@ -1,5 +1,6 @@
 import { Convidado } from 'core';
 import CampoEntrada from '../shared/CampoEntrada';
+import CampoSimNao from '../shared/CampoSimNao';
 
 export interface FormConvidadoProps {
   convidado: Partial<Convidado>;
@@ -23,6 +24,47 @@ export default function FormConvidado(props: FormConvidadoProps) {
           props.convidadoMudou({ ...props.convidado, email: e.target.value })
         }
       />
+
+      <div className="flex gap-5">
+        <CampoSimNao
+          label="Presença Confirmada?"
+          value={props.convidado.confirmado ?? true}
+          onChange={(valor) =>
+            props.convidadoMudou({ ...props.convidado, confirmado: valor })
+          }
+          className="flex-1"
+        />
+        {props.convidado.confirmado && (
+          <div className="flex-1 flex gap-5">
+            <CampoSimNao
+              label="Possui Acompanhantes?"
+              value={props.convidado.possuiAcompanhantes ?? false}
+              onChange={(valor) =>
+                props.convidadoMudou({
+                  ...props.convidado,
+                  possuiAcompanhantes: valor,
+                  qtdeAcompanhantes: valor ? 1 : 0,
+                })
+              }
+              className="flex-1"
+            />
+            {props.convidado.possuiAcompanhantes && (
+              <CampoEntrada
+                label="Quantidade de Acompanhantes"
+                value={props.convidado.qtdeAcompanhantes ?? ''}
+                onChange={(e) =>
+                  props.convidadoMudou({
+                    ...props.convidado,
+                    qtdeAcompanhantes: +e.target.value,
+                  })
+                }
+                min={1}
+                type="number"
+              />
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

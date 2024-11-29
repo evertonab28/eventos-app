@@ -9,6 +9,7 @@ import {
 import { createContext, useCallback, useEffect, useState } from 'react';
 import useAPI from '../hooks/useAPI';
 import { useRouter } from 'next/navigation';
+import useMensagens from '../hooks/useMensagens';
 
 export interface ContextoEventoProps {
   evento: Partial<Evento>;
@@ -28,6 +29,7 @@ const ContextoEvento = createContext<ContextoEventoProps>({} as any);
 
 export function ProvedorContextoEvento(props: any) {
   const { httpGet, httpPost } = useAPI();
+  const { adicionarErro } = useMensagens();
   const router = useRouter();
 
   const [aliasValido, setAliasValido] = useState(true);
@@ -45,8 +47,8 @@ export function ProvedorContextoEvento(props: any) {
           ...eventoCriado,
           data: Data.desformatar(eventoCriado.data),
         });
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        adicionarErro(error.message ?? 'Ocorreu um erro inesperado :(');
       }
     },
     [evento, httpPost, router]
@@ -62,7 +64,7 @@ export function ProvedorContextoEvento(props: any) {
           data: Data.desformatar(evento.data),
         });
       } catch (error: any) {
-        console.log(error);
+        adicionarErro(error.message ?? 'Ocorreu um erro inesperado :(');
       }
     },
     [httpGet, setEvento]
@@ -70,8 +72,12 @@ export function ProvedorContextoEvento(props: any) {
 
   const adicionarConvidado = useCallback(
     async function () {
-      await httpPost(`/eventos/${evento.alias}/convidado`, convidado);
-      router.push('/convite/obrigado');
+      try {
+        await httpPost(`/eventos/${evento.alias}/convidado`, convidado);
+        router.push('/convite/obrigado');
+      } catch (error: any) {
+        adicionarErro(error.message ?? 'Ocorreu um erro inesperado :(');
+      }
     },
     [httpPost, evento, convidado, router]
   );
@@ -84,10 +90,10 @@ export function ProvedorContextoEvento(props: any) {
         );
         setAliasValido(valido);
       } catch (error: any) {
-        console.error(error);
+        adicionarErro(error.message ?? 'Ocorreu um erro inesperado :(');
       }
     },
-    [httpGet, evento]
+    [httpGet, evento, adicionarErro]
   );
 
   useEffect(() => {

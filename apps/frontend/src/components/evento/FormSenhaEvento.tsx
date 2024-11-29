@@ -21,7 +21,7 @@ export default function FormSenhaEvento(props: FormSenhaEventoProps) {
         onChange={(e) => props.setSenha(e.target.value)}
         placeholder="Digite sua senha"
         type="password"
-        outterClassname="w-full"
+        outterClassName="w-full"
       />
       <button className="botao azul" onClick={props.acessarEvento}>
         Acessar Evento
